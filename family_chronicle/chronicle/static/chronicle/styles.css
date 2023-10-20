@@ -1,0 +1,51 @@
+/* login form */
+#container {
+    text-align: center;
+}
+
+#title {
+    font-size: 64px;
+}
+
+#login-form {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+    margin: auto;
+    border: 2px groove black;
+    border-radius: 25px;
+}
+
+h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 48px;
+    cursor: default;
+}
+
+#login-btn {
+    background-color: #FF6666;
+    margin: 25px;
+    padding: 15px;
+    cursor: pointer;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 24px;
+    border-radius: 15px;
+    border: 2px groove black;
+    transition-duration: 0.5s;
+}
+
+#login-btn:hover {
+    background-color: #FF3333;
+}
+
+#username, #password {
+    text-align: center;
+    margin: 15px;
+    font-size: 24px;
+    border-radius: 10px;
+    outline: none;
+}
+
+#username:focus, #password:focus {
+    border: 2px solid #606060;
+}
