@@ -1,16 +1,36 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'chronicle/styles.css' %}">
+    <script src="{% static 'chronicle/home.js' %}"></script>
     <title>Document</title>
 </head>
 <body>
-    <div id="navbar">
-        <!--TODO-->
+    <div id="container">
+        <div id="navbar">
+            <ul id="header">
+                <li><h1 id="title">Kronika Rodzinna</h1></li>
+                <li id="user">{{ user.first_name }} {{ user.last_name }}</li>
+            </ul>
+            <br>
+            <br>
+            <ul id="nav-items">
+                <li id="posts"> <div id="#posts">Posty</div></li>
+                <li id="albums">Albumy</li>
+                <a href="{% url 'logout' %}"><li id="logout">Wyloguj sie</li></a>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <div id="content">
+            {% block body %}
+            {% endblock %}
+        </div>
     </div>
-    {% block body %}
-    {% endblock %}
 </body>
 </html>

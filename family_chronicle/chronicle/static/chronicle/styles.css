@@ -1,10 +1,17 @@
-/* login form */
-#container {
-    text-align: center;
+body {
+    margin: 0;
+    padding: 0;
+
 }
 
+a {
+    color: black;
+}
+
+/* login form */
 #title {
     font-size: 64px;
+    text-align: center;
 }
 
 #login-form {
@@ -48,4 +55,89 @@ h1 {
 
 #username:focus, #password:focus {
     border: 2px solid #606060;
+}
+
+.messages {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.warning {
+    background-color: #FF6666;
+    list-style-type: none;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 32px;
+    color: #808080;
+}
+
+.close-btn:hover {
+    color: #404040;
+}
+
+/* main */
+#container {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#header {
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#user {
+    display: inline;
+    float: right;
+    font-size: 24px;
+    font-family: 'Brush Script MT', cursive;
+}
+
+#nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #FF6666;
+}
+
+#nav-items a:link {
+    text-decoration: none;
+    color: black;
+}
+
+#posts, #albums, #logout {
+    display: inline;
+    padding: 25px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 26px;
+}
+
+#posts, #albums{
+    float: left;
+}
+
+#logout {
+    float: right;
+}
+
+#posts:hover, #albums:hover, #logout:hover {
+    background-color: #FF6666;
+}
+
+#content {
+    margin-top: 40px;
+    border: 1px solid white;
+    border-top: 2px solid #FF6666;
+    text-align: center;
 }
