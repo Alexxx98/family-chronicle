@@ -5,5 +5,7 @@ family_chronicle/.env
 family_chronicle/chronicle/__pycache__
 family_chronicle/family_chronicle/__pycache__
 family_chronicle/chronicle/static/chronicle/photos
+family_chronicle/credentials.json
 
 *.pyc
+
