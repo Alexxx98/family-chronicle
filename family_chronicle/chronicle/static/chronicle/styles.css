@@ -93,6 +93,8 @@ h1 {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #FF6666;
 }
 
 #user {
@@ -102,19 +104,18 @@ h1 {
     font-family: 'Brush Script MT', cursive;
 }
 
-#nav-items {
-    list-style-type: none;
+.nav-items {
+    border-bottom: 1px solid #FF6666;
     margin: 0;
     padding: 0;
-    border: 1px solid #FF6666;
+    overflow: hidden;
 }
 
-#nav-items a:link {
+.nav-items a:link {
     text-decoration: none;
     color: black;
 }
-
-#posts, #albums, #logout {
+.nav-item, #logout {
     display: inline;
     padding: 25px;
     cursor: pointer;
@@ -123,7 +124,7 @@ h1 {
     font-size: 26px;
 }
 
-#posts, #albums{
+.nav-item {
     float: left;
 }
 
@@ -131,13 +132,16 @@ h1 {
     float: right;
 }
 
-#posts:hover, #albums:hover, #logout:hover {
+.nav-item:hover, #logout:hover {
     background-color: #FF6666;
 }
 
+.dropdown {
+    margin-top: 80px;
+    border: 1px solid #FF6666;
+}
+
 #content {
-    margin-top: 40px;
     border: 1px solid white;
-    border-top: 2px solid #FF6666;
     text-align: center;
 }
