@@ -1,44 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
+
     document.querySelector('#posts').addEventListener('click', loadPostsView);
     document.querySelector('#albums').addEventListener('click', loadAlbumsView);
+    document.querySelector('#create-post').addEventListener('click', createPost);
 
     document.querySelector('#posts').addEventListener('mouseover', displayPostsOptions);
     document.querySelector('#albums').addEventListener('mouseover', displayAlbumsOptions);
 
-    document.querySelector('#posts').addEventListener('mouseout', hidePostsOptions);
-    document.querySelector('#albums').addEventListener('mouseout', hideAlbumsOptions);
+    document.querySelector('#header').addEventListener('mouseenter', hideOptions);
+    document.querySelector('#content').addEventListener('mouseenter', hideOptions);
 
     // Default load
-    hidePostsOptions();
-    hideAlbumsOptions();
+    hideOptions();
     loadPostsView();
 });
 
-
+// HTML loaders
 function loadPostsView() {
+    document.querySelector("#post-creation").style.display = "none";
     document.querySelector("#albums-view").style.display = "none";
     document.querySelector("#posts-view").style.display = "block";
 }
 
 function loadAlbumsView() {
+    document.querySelector("#post-creation").style.display = "none";
     document.querySelector("#posts-view").style.display = "none";
     document.querySelector("#albums-view").style.display = "block";
 }
 
+function createPost() {
+    document.querySelector("#posts-view").style.display = "none";
+    document.querySelector("#albums-view").style.display = "none";
+    document.querySelector("#post-creation").style.display = "block";
+}
+
 // Display dropdowns
 function displayPostsOptions() {
+    document.querySelector('#albums-opt').style.display = "none";
     document.querySelector('#posts-opt').style.display = "block";
 }
 
 function displayAlbumsOptions() {
+    document.querySelector('#posts-opt').style.display = "none";
     document.querySelector('#albums-opt').style.display = "block";
 }
 
 // Hide dropdowns
-function hidePostsOptions() {
+function hideOptions() {
     document.querySelector('#posts-opt').style.display = "none";
-}
-
-function hideAlbumsOptions() {
     document.querySelector('#albums-opt').style.display = "none";
 }

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-
+    background-color: #FFFFFF;
 }
 
 a {
@@ -144,4 +144,28 @@ h1 {
 #content {
     border: 1px solid white;
     text-align: center;
+}
+
+/* post creation */
+#post-form {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 30px;
+    padding: 20px;
+}
+
+#post-form label {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    padding: 20px;
+    border-bottom: 1px black;
+}
+
+#post-form input {
+    font-size: 32px;
+    font-family: 'Brush Script MT', cursive;
+}
+
+#post-form textarea {
+    font-size: 28px;
 }
