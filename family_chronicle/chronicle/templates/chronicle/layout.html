@@ -1,40 +1,46 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'chronicle/styles.css' %}">
     <script src="{% static 'chronicle/home.js' %}"></script>
-    <title>Document</title>
+    <title>Kronika</title>
 </head>
 <body>
-    <div id="container">
-        <ul id="header">
-            <li><h1 id="title">Kronika Rodzinna</h1></li>
-            <li id="user">{{ user.first_name }} {{ user.last_name }}</li>
+    <ul id="header">
+        <li><h1 id="title">Kronika Rodzinna</h1></li>
+    </ul>
+    <div id="navbar">
+        <ul class="nav-items">
+            <li class="nav-item" id="albums">Albumy</li>
+            <li class="nav-item" id="users">Uzytkownicy</li>
+            <a href="{% url 'logout' %}"><li id="logout">Wyloguj sie</li></a>
         </ul>
-        <div id="navbar">
-            <ul class="nav-items">
-                <li class="nav-item" id="posts">Posty</li>
-                <li class="nav-item" id="albums">Albumy</li>
-                <a href="{% url 'logout' %}"><li id="logout">Wyloguj sie</li></a>
-            </ul>
-            <ul class="nav-items" id="posts-opt">
-                <li class="nav-item" id="create-post">Utworz Post</li>
-                <li class="nav-item">Moje Posty</li>
-            </ul>
-            <ul class="nav-items" id="albums-opt">
-                <li class="nav-item">Utworz Album</li>
-                <li class="nav-item">Moje Albumy</li>
-            </ul>
-        </div>
+        <ul class="nav-items" id="albums-opt">
+            <li class="nav-item" id="create-album">Utworz Album</li>
+            <li class="nav-item">Moje Albumy</li>
+        </ul>
+    </div>
+
+    <div class="image-popup" data-popup-image>
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+    </div>
+
+    <div id="container">
         <div id="content">
             {% block body %}
             {% endblock %}
         </div>
+
+    </div>
+    <div class="contact-panel">
+        <h2>Kontakt</h2>
+        <p>nr tel.: 512 793 373</p>
+        <p>email:</p>
     </div>
 </body>
 </html>

@@ -1,4 +1,7 @@
 from django import forms
+from django.forms import ModelForm
+
+from .models import User, Album
 
 
 class Login(forms.Form):
@@ -7,6 +10,7 @@ class Login(forms.Form):
             'placeholder': 'Nazwa uzytkownika',
             'id': 'username',
             'autofocus': True,
+            'autocomplete': 'off',
         })
         )
     password = forms.CharField(
@@ -15,3 +19,32 @@ class Login(forms.Form):
             'id': 'password',
         }) 
         )
+
+class AlbumForm(ModelForm):
+    event_date = forms.DateField(
+        widget=forms.DateInput(
+            format="date",
+            attrs={
+                'placeholder': 'rrrr-mm-dd'
+            }
+        )
+    )
+    description = forms.CharField(
+        required=False,
+        widget=forms.Textarea(attrs={'placeholder': 'Opcjonalne'})
+    )
+    participants = forms.ModelMultipleChoiceField(
+        label='',
+        queryset=User.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        )
+    contributors = forms.ModelMultipleChoiceField(
+        label='Edytujacy',
+        queryset=User.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+    )
+    class Meta:
+        model = Album
+        fields = [
+            'title', 'event_date', 'description', 'participants', 'contributors'
+        ]
